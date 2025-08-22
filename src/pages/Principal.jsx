@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import TelaLed from "./TelaLed";
-import BoiaAtatus from "../assets/BoiaStatus";
+import BoiaAtatus from "./BoiaStatus";
+import Dht from "../pages/DHT"
 
 
 
@@ -32,6 +33,12 @@ export default function Principal() {
                      className='flex items-center  gap-4 p-2 rounded hover:bg-gray-700'
                      >
                      <span>Status Boia</span>
+
+                    </Link>
+                    <Link to="/Dht" onClick={() => setMenuAberto(false)}
+                     className='flex items-center  gap-4 p-2 rounded hover:bg-gray-700'
+                     >
+                     <span> DHT </span>
                     </Link>
                    
                 </nav>
@@ -50,6 +57,7 @@ export default function Principal() {
                         <Route path="/" element={<TelaLed />} />
                         <Route path="/telaled" element={<TelaLed />} />
                         <Route path="/boiaStatus" element={<BoiaAtatus />} />
+                        <Route path="/dht" element={<Dht />} />
                     
                     </Routes>
                 </main>
